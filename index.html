@@ -1,0 +1,74 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Gerador de QR Code Coração</title>
+  <link rel="stylesheet" href="style.css" />
+</head>
+<body>
+  <div class="container">
+    <header>
+      <h1>💗 Gerador de QR Code Coração</h1>
+      <p class="subtitle">Crie um QR Code personalizado em formato de coração</p>
+    </header>
+
+    <main>
+      <div class="form-card">
+        <div class="form-group">
+          <label for="qr-input">Texto ou URL</label>
+          <input
+            id="qr-input"
+            type="text"
+            placeholder="Digite um texto ou cole uma URL..."
+            maxlength="500"
+          />
+        </div>
+
+        <div class="form-row">
+          <div class="form-group">
+            <label for="fg-color">Cor do QR Code</label>
+            <input id="fg-color" type="color" value="#c0392b" />
+          </div>
+          <div class="form-group">
+            <label for="bg-color">Cor de Fundo</label>
+            <input id="bg-color" type="color" value="#ffffff" />
+          </div>
+          <div class="form-group">
+            <label for="qr-size">Tamanho (px)</label>
+            <select id="qr-size">
+              <option value="200">200</option>
+              <option value="250">250</option>
+              <option value="300" selected>300</option>
+              <option value="350">350</option>
+              <option value="400">400</option>
+            </select>
+          </div>
+        </div>
+
+        <button id="generate-btn" class="btn-generate">
+          ❤️ Gerar QR Code
+        </button>
+      </div>
+
+      <div id="result-section" class="result-section hidden">
+        <div id="heart-wrapper" class="heart-wrapper">
+          <canvas id="qr-canvas"></canvas>
+        </div>
+        <p id="error-msg" class="error-msg hidden">
+          ⚠️ Não foi possível escanear o QR Code com esta configuração de tamanho/texto. Tente um texto mais curto.
+        </p>
+        <button id="download-btn" class="btn-download">⬇️ Baixar Imagem</button>
+      </div>
+    </main>
+
+    <footer>
+      <p>Feito com ❤️ — QR Codes em formato de coração</p>
+    </footer>
+  </div>
+
+  <!-- QRCode.js library (MIT licence, bundled locally) -->
+  <script src="qrcode.min.js"></script>
+  <script src="script.js"></script>
+</body>
+</html>
